@@ -35,7 +35,7 @@ class sort_tests(unittest.TestCase):
     def multiple_test(self): #тест с многократной генерацией списка
         for i in range(5):
             test_list = generate_list(10)
-            self.assertEqual(list_sort(test_list ),
+            self.assertListEqual(list_sort(test_list ),
                              sorted(test_list 
 
 
