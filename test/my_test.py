@@ -23,10 +23,14 @@ class sort_tests(unittest.TestCase):
          lst = list_sort([43, 21, 54, 76, 87, 32, 54, 12, 43, 65])
          self.assertTrue(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
         
-    def test_empty_list(self): #test with empty list
+    def test_empty(self):
         test_list = []
-        lst = list_sort(test_list)
-        self.assertEqual(lst , [])
+        try:
+            list_sort(test_list)
+        except ValueError:
+            pass
+        else:
+            self.fail("Сортировка пустого списка не должна происходить без ошибки")
 
     def multiple_test(self): #тест с многократной генерацией списка
         for i in range(5):
