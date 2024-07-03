@@ -23,7 +23,7 @@ class sort_tests(unittest.TestCase):
          lst = list_sort([43, 21, 54, 76, 87, 32, 54, 12, 43, 65])
          self.assertTrue(lst[i] <= lst[i + 1] for i in range(len(lst) - 1))
         
-    def test_empty(self):
+    def test_empty(self): #сортировка пустого списка
         test_list = []
         try:
             list_sort(test_list)
