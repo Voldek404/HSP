@@ -1,4 +1,6 @@
 import random
+def generate_list(size): #функция для многократной генерации списков в unit - test
+    return [random.randint(0, 10) for _ in range(size)] 
 def list_sort( list10):
     i = 0
     while i < n - 1:
