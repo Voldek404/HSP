@@ -12,19 +12,18 @@ def file_ins(file_list: list[str]) -> int:
                         sum_1 += int(s)
                     except Exception:
                         return [0, 1]  # сигнализация ошибки
-                    except ValueError:
-                        return [0, 1]  # сигнализация ошибки при использовании не чисел
+                    except TypeError:
+                        return [0, 2]  # сигнализация ошибки при использовании не чисел
 
         except FileNotFoundError:
-            return [0, 1]  # сигнализация ошибки открытия файла
+            return [0, 3]  # сигнализация ошибки открытия файла
     return [sum_1, 0]
 
 
 a = random.randint(1, 10)
 b = random.randint(1, 10)
-file_list = [a, b]
+file_list = [a, 11]
 
 print("Первый номер файла -- ", a)
 print("Второй  номер файла -- ", b)
 print("Общее количество золота составляет -- ", file_ins(file_list))
-
